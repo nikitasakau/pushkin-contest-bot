@@ -16,6 +16,9 @@ class QuizController < ApplicationController
       token: "62a577a09ddc094e97031892510c16fd",
       task_id: id
     }
+    file = File.open('in_data.json', 'w') do |f|
+        f.write(parameters.json)
+    end
     res = Net::HTTP.post_form(uri, parameters)
   end
 end
