@@ -1,3 +1,4 @@
+require_relative 'lib/pushkin'
 class QuizController < ApplicationController
 	skip_before_action :verify_authenticity_token
 

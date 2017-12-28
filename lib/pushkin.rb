@@ -230,4 +230,3 @@ class Pushkin
 
 end
 
-Pushkin.up
