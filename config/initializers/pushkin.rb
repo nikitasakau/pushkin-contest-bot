@@ -1,5 +1,3 @@
-require 'json'
-
 class Pushkin
 	def self.up(level, string)
 		info_string = File.read('database.json')
