@@ -36,3 +36,10 @@ puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
 puma (3.11.0) lib/puma/server.rb:438:in `process_client'
 puma (3.11.0) lib/puma/server.rb:302:in `block in run'
 puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-12-29 00:24:20 +0300
+Processing by QuizController#index as HTML
+  Rendering quiz/index.html.erb within layouts/application
+  Rendered quiz/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 497ms (Views: 236.1ms)
+
+
