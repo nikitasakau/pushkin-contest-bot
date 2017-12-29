@@ -84,7 +84,7 @@ class QuizController < ApplicationController
               end
 
               if answer1 != nil && answer2 != nil
-                answer = "#{answer1},#{answer2}".strip
+                answer = "#{answer1}, #{answer2}"
                 break
               end
             end
