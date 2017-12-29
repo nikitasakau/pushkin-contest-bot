@@ -28,7 +28,7 @@ class QuizController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    s_file = File.read('pushkin.json')
+    s_file = File.read('database.json')
     str = JSON.parse(s_file)
     @per = str[0][0]
   end
