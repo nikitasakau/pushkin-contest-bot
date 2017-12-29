@@ -34,7 +34,7 @@ class QuizController < ApplicationController
   end
 
   def task
-    s_file = File.read('pushkin.json')
+    s_file = File.read('database.json')
     str = JSON.parse(s_file)
     answer = ""
     question = params["question"]
