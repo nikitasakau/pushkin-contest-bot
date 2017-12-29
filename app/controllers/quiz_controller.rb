@@ -16,6 +16,7 @@ class QuizController < ApplicationController
 				info.size.times do |i|
 					if info[i][1].include?(string)
 						answer = info[i][0]
+						break
 					end
 				end
 
