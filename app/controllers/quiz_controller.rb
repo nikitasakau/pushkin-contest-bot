@@ -45,7 +45,6 @@ class QuizController < ApplicationController
       end
     when 3
       string = string.split('\n')
-      answer = nil
       devited_first = string[0].split('%WORD%')
       devited_second = string[1].split('%WORD%')
       info.size.times do |i|
@@ -84,7 +83,7 @@ class QuizController < ApplicationController
               end
 
               if answer1 != nil && answer2 != nil
-                answer = "#{answer1}, #{answer2}"
+                answer = "#{answer1},#{answer2}"
                 break
               end
             end
