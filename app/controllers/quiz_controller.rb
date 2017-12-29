@@ -14,15 +14,7 @@ class QuizController < ApplicationController
     string = params["question"]
     level = params["level"].to_i
     id = params["id"]
-    case level
-      when 1
-        info.size.times do |i|
-		if info[i][1].include?(string)
-			answer = info[i][0]
-			break
-		end
-	end
-    end
+    answer = Pushkin.up(level, string, info)
     if answer
       uri_app = URI('http://pushkin.rubyroidlabs.com/quiz')
 
