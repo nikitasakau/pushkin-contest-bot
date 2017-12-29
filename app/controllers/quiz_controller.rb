@@ -43,6 +43,57 @@ class QuizController < ApplicationController
           break
         end
       end
+    when 3
+      string = string.split('\n')
+      answer = nil
+      devited_first = string[0].split('%WORD%')
+      devited_second = string[1].split('%WORD%')
+      info.size.times do |i|
+        devited_info = info[i][1].split(/\n/)
+        devited_info.size.times do |j|
+          if devited_info[j].include?(devited_first[0]) && devited_info[j].include?(devited_first[1])
+            if devited_info[j+1].include?(devited_second[0]) && devited_info[j+1].include?(devited_second[1])
+              answer1 = nil
+              if devited_first[0].empty? && info[i][1].include?(devited_first[1])
+                answer1 = info[i][1].split(devited_first[1])
+                answer1 = answer1[0]
+              end
+              if devited_first[1].nil? && info[i][1].include?(devited_first[0])
+                answer1 = info[i][1].split(devited_first[0])
+                answer1 = answer1[1]
+              end
+              if info[i][1].include?(devited_first[0]) && info[i][1].include?(devited_first[1])
+                answer1 = info[i][1].split(devited_first[0])
+                answer1 = answer1[1].split(devited_first[1])
+                answer1 = answer1[0]
+              end
+
+              answer2 = nil
+              if devited_second[0].empty? && info[i][1].include?(devited_second[1])
+                answer2 = info[i][1].split(devited_second[1])
+                answer2 = answer2[0]
+              end
+              if devited_second[1].nil? && info[i][1].include?(devited_second[0])
+                answer2 = info[i][1].split(devited_second[0])
+                answer2 = answer2[1]
+              end
+              if info[i][1].include?(devited_second[0]) && info[i][1].include?(devited_second[1])
+                answer2 = info[i][1].split(devited_second[0])
+                answer2 = answer2[1].split(devited_second[1])
+                answer2 = answer2[0]
+              end
+
+              if answer1 != nil && answer2 != nil
+                answer = "#{answer1},#{answer2}".strip
+                break
+              end
+            end
+          end
+        end
+        if answer != nil
+          break
+        end
+      end
     end
     if answer
       uri_app = URI('http://pushkin.rubyroidlabs.com/quiz')
@@ -53,11 +104,6 @@ class QuizController < ApplicationController
         task_id: id
       }
       Net::HTTP.post_form(uri_app, parameters)
-      #render json: 'ok'
-      #puts res.body
-    end
-    file = File.open('in_data.json', 'w') do |f|
-      f.write(params)
     end
   end
 end
