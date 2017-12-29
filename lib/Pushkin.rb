@@ -1,4 +1,3 @@
-require 'json'
 class Pushkin
 	def self.up(level, string, info)
     		if level == 1
@@ -228,6 +227,4 @@ class Pushkin
 	end
 
 end
-info_string = File.read('database.json')
-    	info = JSON.parse(info_string)
-puts Pushkin.up(1,"Бог помочь вам, друзья мои",info)
+
