@@ -19,6 +19,7 @@ class QuizController < ApplicationController
 						break
 					end
 				end
+	end
 
 	
 	uri = URI('http://pushkin.rubyroidlabs.com/quiz')
