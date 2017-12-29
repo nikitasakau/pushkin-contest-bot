@@ -26845,3 +26845,1106 @@ checked out. Run `bundle install` first.
  DEBUG [43c71ed7] Command: cd /var/www/Pushkin/current && ( export RACK_ENV="production" ; ~/.rvm/bin/rvm 2.4.0 do bundle exec pumactl -S /var/www/Pushkin/shared/tmp/pids/puma.state -F /var/www/Pushkin/shared/puma.rb restart )
  DEBUG [43c71ed7] 	Command restart sent success
   INFO [43c71ed7] Finished in 3.383 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-12-29 23:14:54 +0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [1da3fb44] Running [ -d ~/.rvm ] as deployer@92.53.91.88
+ DEBUG [1da3fb44] Command: [ -d ~/.rvm ]
+ DEBUG [1da3fb44] Finished in 4.964 seconds with exit status 0 (successful).
+ DEBUG [f1d7eea9] Running ~/.rvm/bin/rvm version as deployer@92.53.91.88
+ DEBUG [f1d7eea9] Command: ~/.rvm/bin/rvm version
+ DEBUG [f1d7eea9] 	rvm 1.29.3 (master) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+ DEBUG [f1d7eea9] Finished in 2.306 seconds with exit status 0 (successful).
+ DEBUG [b92fe19c] Running ~/.rvm/bin/rvm current as deployer@92.53.91.88
+ DEBUG [b92fe19c] Command: ~/.rvm/bin/rvm current
+ DEBUG [b92fe19c] 	ruby-2.4.0
+ DEBUG [b92fe19c] Finished in 1.061 seconds with exit status 0 (successful).
+ DEBUG [7625e40c] Running ~/.rvm/bin/rvm 2.4.0 do ruby --version as deployer@92.53.91.88
+ DEBUG [7625e40c] Command: ~/.rvm/bin/rvm 2.4.0 do ruby --version
+ DEBUG [7625e40c] 	ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+ DEBUG [7625e40c] Finished in 1.521 seconds with exit status 0 (successful).
+  INFO [6e993deb] Running /usr/bin/env mkdir -p /tmp as deployer@92.53.91.88
+ DEBUG [6e993deb] Command: /usr/bin/env mkdir -p /tmp
+  INFO [6e993deb] Finished in 0.601 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Pushkin-production-nikita.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Pushkin-production-nikita.sh 100.0%
+  INFO [b4cf7b22] Running /usr/bin/env chmod 700 /tmp/git-ssh-Pushkin-production-nikita.sh as deployer@92.53.91.88
+ DEBUG [b4cf7b22] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Pushkin-production-nikita.sh
+  INFO [b4cf7b22] Finished in 1.479 seconds with exit status 0 (successful).
+  INFO [dcbbd42d] Running /usr/bin/env git ls-remote git@github.com:nikitasakov/pushkin-contest-bot.git HEAD as deployer@92.53.91.88
+ DEBUG [dcbbd42d] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Pushkin-production-nikita.sh" ; /usr/bin/env git ls-remote git@github.com:nikitasakov/pushkin-contest-bot.git HEAD )
+ DEBUG [dcbbd42d] 	8208b059271028f96b7daa160270eb858ccd52b9	HEAD
+  INFO [dcbbd42d] Finished in 5.006 seconds with exit status 0 (successful).
+  INFO [3aa62660] Running /usr/bin/env mkdir -p /var/www/Pushkin/shared /var/www/Pushkin/releases as deployer@92.53.91.88
+ DEBUG [3aa62660] Command: /usr/bin/env mkdir -p /var/www/Pushkin/shared /var/www/Pushkin/releases
+  INFO [3aa62660] Finished in 0.961 seconds with exit status 0 (successful).
+  INFO [7983d254] Running /usr/bin/env mkdir -p /var/www/Pushkin/shared/log /var/www/Pushkin/shared/tmp/pids /var/www/Pushkin/shared/public/assets /var/www/Pushkin/shared/tmp/cache /var/www/Pushkin/shared/tmp/sockets /var/www/Pushkin/shared/vendor/bundle /var/www/Pushkin/shared/public/system as deployer@92.53.91.88
+ DEBUG [7983d254] Command: /usr/bin/env mkdir -p /var/www/Pushkin/shared/log /var/www/Pushkin/shared/tmp/pids /var/www/Pushkin/shared/public/assets /var/www/Pushkin/shared/tmp/cache /var/www/Pushkin/shared/tmp/sockets /var/www/Pushkin/shared/vendor/bundle /var/www/Pushkin/shared/public/system
+  INFO [7983d254] Finished in 1.563 seconds with exit status 0 (successful).
+  INFO [47a0a542] Running /usr/bin/env mkdir -p /var/www/Pushkin/shared/config as deployer@92.53.91.88
+ DEBUG [47a0a542] Command: /usr/bin/env mkdir -p /var/www/Pushkin/shared/config
+  INFO [47a0a542] Finished in 0.673 seconds with exit status 0 (successful).
+ DEBUG [8b566f5f] Running [ -f /var/www/Pushkin/shared/config/database.yml ] as deployer@92.53.91.88
+ DEBUG [8b566f5f] Command: [ -f /var/www/Pushkin/shared/config/database.yml ]
+ DEBUG [8b566f5f] Finished in 0.949 seconds with exit status 0 (successful).
+ DEBUG [126acf3b] Running [ -f /var/www/Pushkin/shared/config/secrets.yml ] as deployer@92.53.91.88
+ DEBUG [126acf3b] Command: [ -f /var/www/Pushkin/shared/config/secrets.yml ]
+ DEBUG [126acf3b] Finished in 0.677 seconds with exit status 0 (successful).
+ DEBUG [0ccd711f] Running [ -f /var/www/Pushkin/shared/puma.rb ] as deployer@92.53.91.88
+ DEBUG [0ccd711f] Command: [ -f /var/www/Pushkin/shared/puma.rb ]
+ DEBUG [0ccd711f] Finished in 1.732 seconds with exit status 0 (successful).
+ DEBUG [df23ffd8] Running [ -f /var/www/Pushkin/current/REVISION ] as deployer@92.53.91.88
+ DEBUG [df23ffd8] Command: [ -f /var/www/Pushkin/current/REVISION ]
+ DEBUG [df23ffd8] Finished in 1.273 seconds with exit status 0 (successful).
+ DEBUG [ac7ac1bc] Running /usr/bin/env cat /var/www/Pushkin/current/REVISION 2>/dev/null as deployer@92.53.91.88
+ DEBUG [ac7ac1bc] Command: /usr/bin/env cat /var/www/Pushkin/current/REVISION 2>/dev/null
+ DEBUG [ac7ac1bc] 	11f45e56573ecd1af23ce71e6c02d0b8f0f2de09
+ DEBUG [ac7ac1bc] Finished in 1.144 seconds with exit status 0 (successful).
+ DEBUG [4af867d7] Running [ -f /var/www/Pushkin/repo/HEAD ] as deployer@92.53.91.88
+ DEBUG [4af867d7] Command: [ -f /var/www/Pushkin/repo/HEAD ]
+ DEBUG [4af867d7] Finished in 1.140 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/Pushkin/repo
+ DEBUG [ae66b072] Running if test ! -d /var/www/Pushkin/repo; then echo "Directory does not exist '/var/www/Pushkin/repo'" 1>&2; false; fi as deployer@92.53.91.88
+ DEBUG [ae66b072] Command: if test ! -d /var/www/Pushkin/repo; then echo "Directory does not exist '/var/www/Pushkin/repo'" 1>&2; false; fi
+ DEBUG [ae66b072] Finished in 0.953 seconds with exit status 0 (successful).
+  INFO [1032e3d8] Running /usr/bin/env git remote set-url origin git@github.com:nikitasakov/pushkin-contest-bot.git as deployer@92.53.91.88
+ DEBUG [1032e3d8] Command: cd /var/www/Pushkin/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Pushkin-production-nikita.sh" ; /usr/bin/env git remote set-url origin git@github.com:nikitasakov/pushkin-contest-bot.git )
+  INFO [1032e3d8] Finished in 1.492 seconds with exit status 0 (successful).
+  INFO [526bfb37] Running /usr/bin/env git remote update --prune as deployer@92.53.91.88
+ DEBUG [526bfb37] Command: cd /var/www/Pushkin/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Pushkin-production-nikita.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [526bfb37] 	Fetching origin
+ DEBUG [526bfb37] 	From github.com:nikitasakov/pushkin-contest-bot
+   11f45e5..8208b05  master     -> master
+  INFO [526bfb37] Finished in 5.910 seconds with exit status 0 (successful).
+ DEBUG [a2bb0f41] Running if test ! -d /var/www/Pushkin/repo; then echo "Directory does not exist '/var/www/Pushkin/repo'" 1>&2; false; fi as deployer@92.53.91.88
+ DEBUG [a2bb0f41] Command: if test ! -d /var/www/Pushkin/repo; then echo "Directory does not exist '/var/www/Pushkin/repo'" 1>&2; false; fi
+ DEBUG [a2bb0f41] Finished in 0.332 seconds with exit status 0 (successful).
+  INFO [9950ec53] Running /usr/bin/env mkdir -p /var/www/Pushkin/releases/20171229201522 as deployer@92.53.91.88
+ DEBUG [9950ec53] Command: cd /var/www/Pushkin/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Pushkin-production-nikita.sh" ; /usr/bin/env mkdir -p /var/www/Pushkin/releases/20171229201522 )
+  INFO [9950ec53] Finished in 0.966 seconds with exit status 0 (successful).
+  INFO [fb357539] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Pushkin/releases/20171229201522 as deployer@92.53.91.88
+ DEBUG [fb357539] Command: cd /var/www/Pushkin/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Pushkin-production-nikita.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Pushkin/releases/20171229201522 )
+ DEBUG [fb357539] 	tar: Capfile: time stamp 2017-12-29 23:14:18 is 10669.809815037 s in the future
+tar: Gemfile: time stamp 2017-12-29 23:14:18 is 10669.80964972 s in the future
+ DEBUG [fb357539] 	tar: Gemfile.lock: time stamp 2017-12-29 23:14:18 is 10669.809347974 s in the future
+tar: README.md: time stamp 2017-12-29 23:14:18 is 10669.809287559 s in the future
+tar: Rakefile: time stamp 2017-12-29 23:14:18 is 10669.809243657 s in the future
+tar: app/assets/config/manifest.js: time stamp 2017-12-29 23:14:18 is 10669.809110157 s in the future
+tar: app/assets/config: time stamp 2017-12-29 23:14:18 is 10669.809080574 s in the future
+ DEBUG [fb357539] 	tar: app/assets/images/.keep: time stamp 2017-12-29 23:14:18 is 10669.808930695 s in the future
+tar: app/assets/images: time stamp 2017-12-29 23:14:18 is 10669.808897822 s in the future
+tar: app/assets/javascripts/application.js: time stamp 2017-12-29 23:14:18 is 10669.808829792 s in the future
+ DEBUG [fb357539] 	tar: app/assets/javascripts/cable.js: time stamp 2017-12-29 23:14:18 is 10669.808570908 s in the future
+tar: app/assets/javascripts/channels/.keep: time stamp 2017-12-29 23:14:18 is 10669.808498507 s in the future
+tar: app/assets/javascripts/channels: time stamp 2017-12-29 23:14:18 is 10669.808470547 s in the future
+tar: app/assets/javascripts/quiz.coffee: time stamp 2017-12-29 23:14:18 is 10669.808426804 s in the future
+tar: app/assets/javascripts: time stamp 2017-12-29 23:14:18 is 10669.808400172 s in the future
+tar: app/assets/stylesheets/application.css: time stamp 2017-12-29 23:14:18 is 10669.808334837 s in the future
+tar: app/assets/stylesheets/quiz.scss: time stamp 2017-12-29 23:14:18 is 10669.808288357 s in the future
+tar: app/assets/stylesheets: time stamp 2017-12-29 23:14:18 is 10669.808264744 s in the future
+tar: app/assets: time stamp 2017-12-29 23:14:18 is 10669.808250429 s in the future
+tar: app/channels/application_cable/channel.rb: time stamp 2017-12-29 23:14:18 is 10669.808166744 s in the future
+tar: app/channels/application_cable/connection.rb: time stamp 2017-12-29 23:14:18 is 10669.808118981 s in the future
+tar: app/channels/application_cable: time stamp 2017-12-29 23:14:18 is 10669.808093176 s in the future
+tar: app/channels: time stamp 2017-12-29 23:14:18 is 10669.8080756 s in the future
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/controllers/application_controller.rb: time stamp 2017-12-29 23:14:18 is 10669.807811564 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/controllers/concerns/.keep: time stamp 2017-12-29 23:14:18 is 10669.807666527 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/controllers/concerns: time stamp 2017-12-29 23:14:18 is 10669.807577988 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/controllers/quiz_controller.rb: time stamp 2017-12-29 23:14:18 is 10669.807485888 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/controllers: time stamp 2017-12-29 23:14:18 is 10669.807393594 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/helpers/application_helper.rb: time stamp 2017-12-29 23:14:18 is 10669.807257298 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/helpers/quiz_helper.rb: time stamp 2017-12-29 23:14:18 is 10669.807123387 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/helpers: time stamp 2017-12-29 23:14:18 is 10669.807033385 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/jobs/application_job.rb: time stamp 2017-12-29 23:14:18 is 10669.806903459 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/jobs: time stamp 2017-12-29 23:14:18 is 10669.806812129 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/mailers/application_mailer.rb: time stamp 2017-12-29 23:14:18 is 10669.806675469 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/mailers: time stamp 2017-12-29 23:14:18 is 10669.806576643 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/models/application_record.rb: time stamp 2017-12-29 23:14:18 is 10669.806450105 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/models/concerns/.keep: time stamp 2017-12-29 23:14:18 is 10669.80487525 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/models/concerns: time stamp 2017-12-29 23:14:18 is 10669.804750388 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/models: time stamp 2017-12-29 23:14:18 is 10669.804664245 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/views/layouts/application.html.erb: time stamp 2017-12-29 23:14:18 is 10669.804505073 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/views/layouts/mailer.html.erb: time stamp 2017-12-29 23:14:18 is 10669.804385627 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/views/layouts/mailer.text.erb: time stamp 2017-12-29 23:14:18 is 10669.804285005 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/views/layouts: time stamp 2017-12-29 23:14:18 is 10669.804191364 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/views/quiz/index.html.erb: time stamp 2017-12-29 23:14:18 is 10669.804052402 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/views/quiz/quiz.html.erb: time stamp 2017-12-29 23:14:18 is 10669.80393009 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/views/quiz: time stamp 2017-12-29 23:14:18 is 10669.803837328 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app/views: time stamp 2017-12-29 23:14:18 is 10669.803757569 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	app: time stamp 2017-12-29 23:14:18 is 10669.803673567 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	bin/bundle: time stamp 2017-12-29 23:14:18 is 10669.803546439 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	bin/rails: time stamp 2017-12-29 23:14:18 is 10669.803438285 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	bin/rake: time stamp 2017-12-29 23:14:18 is 10669.803316444 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	bin/setup: time stamp 2017-12-29 23:14:18 is 10669.80321516 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	bin/spring: time stamp 2017-12-29 23:14:18 is 10669.803113859 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	bin/update: time stamp 2017-12-29 23:14:18 is 10669.803001142 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	bin/yarn: time stamp 2017-12-29 23:14:18 is 10669.802883062 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	bin: time stamp 2017-12-29 23:14:18 is 10669.802783643 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config.ru: time stamp 2017-12-29 23:14:18 is 10669.802674323 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/application.rb: time stamp 2017-12-29 23:14:18 is 10669.802536893 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/boot.rb: time stamp 2017-12-29 23:14:18 is 10669.802422235 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/cable.yml: time stamp 2017-12-29 23:14:18 is 10669.802297838 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/database.yml: time stamp 2017-12-29 23:14:18 is 10669.8021559 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/deploy.rb: time stamp 2017-12-29 23:14:18 is 10669.802055881 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/deploy/production.rb: time stamp 2017-12-29 23:14:18 is 10669.80193334 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/deploy/staging.rb: time stamp 2017-12-29 23:14:18 is 10669.801818649 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/deploy: time stamp 2017-12-29 23:14:18 is 10669.801722767 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/environment.rb: time stamp 2017-12-29 23:14:18 is 10669.801609001 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/environments/development.rb: time stamp 2017-12-29 23:14:18 is 10669.801465799 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/environments/production.rb: time stamp 2017-12-29 23:14:18 is 10669.801354488 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/environments/test.rb: time stamp 2017-12-29 23:14:18 is 10669.801237983 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/environments: time stamp 2017-12-29 23:14:18 is 10669.801142279 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/initializers/application_controller_renderer.rb: time stamp 2017-12-29 23:14:18 is 10669.800962588 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/initializers/assets.rb: time stamp 2017-12-29 23:14:18 is 10669.800842493 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/initializers/backtrace_silencers.rb: time stamp 2017-12-29 23:14:18 is 10669.79688495 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/initializers/cookies_serializer.rb: time stamp 2017-12-29 23:14:18 is 10669.796755573 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/initializers/filter_parameter_logging.rb: time stamp 2017-12-29 23:14:18 is 10669.796631471 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/initializers/inflections.rb: time stamp 2017-12-29 23:14:18 is 10669.79650444 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/initializers/mime_types.rb: time stamp 2017-12-29 23:14:18 is 10669.79638477 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/initializers/wrap_parameters.rb: time stamp 2017-12-29 23:14:18 is 10669.796271029 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	config/initializers: time stamp 2017-12-29 23:14:18 is 10669.796173982 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: config/locales/en.yml: time stamp 2017-12-29 23:14:18 is 10669.782748396 s in the future
+tar: config/locales: time stamp 2017-12-29 23:14:18 is 10669.782673023 s in the future
+tar: config/puma.rb: time stamp 2017-12-29 23:14:18 is 10669.782605379 s in the future
+tar: config/routes.rb: time stamp 2017-12-29 23:14:18 is 10669.782551825 s in the future
+tar: config/secrets.yml: time stamp 2017-12-29 23:14:18 is 10669.782502805 s in the future
+tar: config/spring.rb: time stamp 2017-12-29 23:14:18 is 10669.782461473 s in the future
+tar: config: time stamp 2017-12-29 23:14:18 is 10669.782440895 s in the future
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	database.json: time stamp 2017-12-29 23:14:18 is 10669.772975496 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	db/seeds.rb: time stamp 2017-12-29 23:14:18 is 10669.77274005 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	db: time stamp 2017-12-29 23:14:18 is 10669.772656073 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	in_data.json: time stamp 2017-12-29 23:14:18 is 10669.772574671 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: lib/Pushkin.rb: time stamp 2017-12-29 23:14:18 is 10669.757901234 s in the future
+tar: lib/assets/.keep: time stamp 2017-12-29 23:14:18 is 10669.757770665 s in the future
+tar: lib/assets: time stamp 2017-12-29 23:14:18 is 10669.757740872 s in the future
+ DEBUG [fb357539] 	tar: lib/database.json: time stamp 2017-12-29 23:14:18 is 10669.746981728 s in the future
+tar: lib/tasks/.keep: time stamp 2017-12-29 23:14:18 is 10669.746887464 s in the future
+tar: lib/tasks: time stamp 2017-12-29 23:14:18 is 10669.74686905 s in the future
+tar: lib: time stamp 2017-12-29 23:14:18 is 10669.746859744 s in the future
+tar: log/.keep: time stamp 2017-12-29 23:14:18 is 10669.746819337 s in the future
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	log/capistrano.log: time stamp 2017-12-29 23:14:18 is 10669.744197327 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	log/development.log: time stamp 2017-12-29 23:14:18 is 10669.744003403 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	log: time stamp 2017-12-29 23:14:18 is 10669.743909106 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	out_data.json: time stamp 2017-12-29 23:14:18 is 10669.743831669 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	package.json: time stamp 2017-12-29 23:14:18 is 10669.743753472 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	public/404.html: time stamp 2017-12-29 23:14:18 is 10669.743640383 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	public/422.html: time stamp 2017-12-29 23:14:18 is 10669.743563435 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	public/500.html: time stamp 2017-12-29 23:14:18 is 10669.743399583 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	public/apple-touch-icon-precomposed.png: time stamp 2017-12-29 23:14:18 is 10669.743325607 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	public/apple-touch-icon.png: time stamp 2017-12-29 23:14:18 is 10669.743258769 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	public/favicon.ico: time stamp 2017-12-29 23:14:18 is 10669.743192317 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	public/robots.txt: time stamp 2017-12-29 23:14:18 is 10669.743119567 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	public: time stamp 2017-12-29 23:14:18 is 10669.743061247 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test/application_system_test_case.rb: time stamp 2017-12-29 23:14:18 is 10669.742975921 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test/controllers/.keep: time stamp 2017-12-29 23:14:18 is 10669.742888872 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test/controllers/quiz_controller_test.rb: time stamp 2017-12-29 23:14:18 is 10669.742814421 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test/controllers: time stamp 2017-12-29 23:14:18 is 10669.742755173 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test/fixtures/.keep: time stamp 2017-12-29 23:14:18 is 10669.742678683 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test/fixtures/files/.keep: time stamp 2017-12-29 23:14:18 is 10669.742594358 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test/fixtures/files: time stamp 2017-12-29 23:14:18 is 10669.742535269 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test/fixtures: time stamp 2017-12-29 23:14:18 is 10669.742485036 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test/helpers/.keep: time stamp 2017-12-29 23:14:18 is 10669.742410135 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test/helpers: time stamp 2017-12-29 23:14:18 is 10669.742351227 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test/integration/.keep: time stamp 2017-12-29 23:14:18 is 10669.741430277 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test/integration: time stamp 2017-12-29 23:14:18 is 10669.741359728 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test/mailers/.keep: time stamp 2017-12-29 23:14:18 is 10669.741275883 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test/mailers: time stamp 2017-12-29 23:14:18 is 10669.741215631 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test/models/.keep: time stamp 2017-12-29 23:14:18 is 10669.741137513 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test/models: time stamp 2017-12-29 23:14:18 is 10669.741078267 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test/system/.keep: time stamp 2017-12-29 23:14:18 is 10669.740973315 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test/system: time stamp 2017-12-29 23:14:18 is 10669.740913275 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test/test_helper.rb: time stamp 2017-12-29 23:14:18 is 10669.740841408 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	test: time stamp 2017-12-29 23:14:18 is 10669.740782693 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/.keep: time stamp 2017-12-29 23:14:18 is 10669.740664299 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/-Q/-QewprxvtBx4V6xlFqyPgxAbAlzGtVQO3eEQZNto2Xc.cache: time stamp 2017-12-29 23:14:18 is 10669.74035449 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/-Q: time stamp 2017-12-29 23:14:18 is 10669.740274442 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/-f/-fdMSA2f6tPNjtPtyb3bIDwHnxnG8RKBauqzfEyX4es.cache: time stamp 2017-12-29 23:14:18 is 10669.740170859 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/-f: time stamp 2017-12-29 23:14:18 is 10669.740099423 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/09/09VG3ntpdKqcsVUBQd0vh6gbB61Tg52pl4mX3Dp80zA.cache: time stamp 2017-12-29 23:14:18 is 10669.740011771 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/09: time stamp 2017-12-29 23:14:18 is 10669.739950877 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/1O/1OwKj9B74qV3jAnZaZwJ1hcgWaRsUFkh10e53DfrKxY.cache: time stamp 2017-12-29 23:14:18 is 10669.73986376 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/1O: time stamp 2017-12-29 23:14:18 is 10669.739782974 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/1v/1vIcb_hlAW9hLRn8zGn4sTQyzU7T-_nz7swtT4CK0xQ.cache: time stamp 2017-12-29 23:14:18 is 10669.739666993 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/1v: time stamp 2017-12-29 23:14:18 is 10669.739603872 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/2J/2JfeUuHwTlAn6ELFVmngWZ8llV-WC9ZH-OyaffgQREE.cache: time stamp 2017-12-29 23:14:18 is 10669.73951398 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/2J: time stamp 2017-12-29 23:14:18 is 10669.739452672 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/2d/2dehC5f1yO6b0RJqvvdBIS0A-YLskNOVN4S2c5xKcsM.cache: time stamp 2017-12-29 23:14:18 is 10669.739340219 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/2d: time stamp 2017-12-29 23:14:18 is 10669.739251331 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/2g/2giLpqduxCQNOVzCIlrVBUrV0dEb0lQszK3cGjH7U30.cache: time stamp 2017-12-29 23:14:18 is 10669.739161491 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/2g: time stamp 2017-12-29 23:14:18 is 10669.739100575 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/2k/2kyBPUWAqjZ8D6ojBgWcNHpxvIgc6S6UL2tuDRfLLjU.cache: time stamp 2017-12-29 23:14:18 is 10669.738795525 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/2k: time stamp 2017-12-29 23:14:18 is 10669.738733044 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/4M/4MIo36LTiOrfHlSO1LtK4H1ou7JP7PMndBKz6vThrsA.cache: time stamp 2017-12-29 23:14:18 is 10669.738646132 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/4M: time stamp 2017-12-29 23:14:18 is 10669.738561297 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/4h/4hG6RQ4iiYsqdUccbDLyvlme-d01isueHiMPsAMLZNM.cache: time stamp 2017-12-29 23:14:18 is 10669.738233039 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/4h: time stamp 2017-12-29 23:14:18 is 10669.7381047 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/5v/5vdXZFJU3TVRrBqKngUXRroSXDRqCKrB7rm41sSD0iE.cache: time stamp 2017-12-29 23:14:18 is 10669.737985493 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/5v: time stamp 2017-12-29 23:14:18 is 10669.737623562 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/61/61DYE6KWkT0kZHOqhoDyZVE-tFnswqDzUluEf04Z9qI.cache: time stamp 2017-12-29 23:14:18 is 10669.737531188 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/61: time stamp 2017-12-29 23:14:18 is 10669.737449504 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/6D/6DGO9Sm4R0ohb6XowYfOk3jReS3j34yVH4-93OxS-xU.cache: time stamp 2017-12-29 23:14:18 is 10669.737346331 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/6D: time stamp 2017-12-29 23:14:18 is 10669.737284702 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/6J/6J6JSQkUW3GPPXoUjK2ypyW0xLEla650Q7gX7ToIZso.cache: time stamp 2017-12-29 23:14:18 is 10669.737197029 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/6J: time stamp 2017-12-29 23:14:18 is 10669.737132548 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/6K/6K4I6mtiq5wcr3gIXKTj1rPXoYwDgtMPSgZeme0aOOg.cache: time stamp 2017-12-29 23:14:18 is 10669.737023889 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/6K: time stamp 2017-12-29 23:14:18 is 10669.736923228 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/6T/6T3SUSSir_6gB0pYA8IM2R_TVmmZb6JO-CIMKhx8Jjc.cache: time stamp 2017-12-29 23:14:18 is 10669.736799428 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/6T: time stamp 2017-12-29 23:14:18 is 10669.736616568 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/7I/7I8UZneCgvDRqBmvJxCVYdAiK3idHxf66cgqOa1-7Xg.cache: time stamp 2017-12-29 23:14:18 is 10669.736526643 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/7I: time stamp 2017-12-29 23:14:18 is 10669.736465385 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/7d/7dlnl1zKsvbovaJIjYaVIXCaQCEXsN8jZvdmKyPtvEc.cache: time stamp 2017-12-29 23:14:18 is 10669.736360954 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/7d: time stamp 2017-12-29 23:14:18 is 10669.73628826 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/99/99m8UCKl4j8IpsVOK8ltLHyNh8Ae0nHw3GBkC34V_co.cache: time stamp 2017-12-29 23:14:18 is 10669.736169661 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/99: time stamp 2017-12-29 23:14:18 is 10669.736106525 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/9q/9qQfAC3qchbyVZCmbuXr6BWvW8jHV0h24OR2B7WGDLw.cache: time stamp 2017-12-29 23:14:18 is 10669.736020249 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/9q: time stamp 2017-12-29 23:14:18 is 10669.73596002 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/B4/B43LeT9Wba4fLvXw-C_kKq-x9HwYZxnBBiltbIufzzQ.cache: time stamp 2017-12-29 23:14:18 is 10669.735874627 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/B4: time stamp 2017-12-29 23:14:18 is 10669.735814513 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/BW/BWUE96ndCATn18dxEOMEXPb8ZBUvikzKJL0pkBzoz9g.cache: time stamp 2017-12-29 23:14:18 is 10669.735690293 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/BW: time stamp 2017-12-29 23:14:18 is 10669.735550907 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Bc/Bc6yjsIryiaA1SATYbgj2OVYWix49g46RgGMJdL3Nu0.cache: time stamp 2017-12-29 23:14:18 is 10669.735458536 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Bc: time stamp 2017-12-29 23:14:18 is 10669.735228454 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Bl/Blp1o5Iqn10pKPLUfWaIlV7QhHNMKJx3xNWtTsageV0.cache: time stamp 2017-12-29 23:14:18 is 10669.735138903 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Bl: time stamp 2017-12-29 23:14:18 is 10669.735078344 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/C8/C8iiQhUW8MHTPCJG0S72dhNg-YdXDJWVpjdDHOnSqGk.cache: time stamp 2017-12-29 23:14:18 is 10669.734991566 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/C8: time stamp 2017-12-29 23:14:18 is 10669.734931326 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Cm/CmRRGxuOfNaE7kSGICGkeeuG6YDLNqXvrBBirfQCeh4.cache: time stamp 2017-12-29 23:14:18 is 10669.734846352 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Cm: time stamp 2017-12-29 23:14:18 is 10669.73478625 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/DA/DAMxkpAMqLrzm_FsOG8Nw7AYUf_SQzBm_bgTVv65HGg.cache: time stamp 2017-12-29 23:14:18 is 10669.73467796 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/DA: time stamp 2017-12-29 23:14:18 is 10669.734601221 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Dk/Dkh3AkMeAaYtpriiRIT-YLitmRVetPnwhPRvf1I7a3I.cache: time stamp 2017-12-29 23:14:18 is 10669.734509393 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Dk: time stamp 2017-12-29 23:14:18 is 10669.734299053 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Gw/GwKrtYzq6U1JYLlBj1iGJDXTWkwZdFFj_KdgwHOYuhw.cache: time stamp 2017-12-29 23:14:18 is 10669.734122909 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Gw: time stamp 2017-12-29 23:14:18 is 10669.734057837 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/HC/HCDOUd7-S45aJ_PjVAC_Vmjyud3i1aQv4cE3t9_Z3Dw.cache: time stamp 2017-12-29 23:14:18 is 10669.733970355 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/HC: time stamp 2017-12-29 23:14:18 is 10669.733894002 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Hg/Hg6zZSsYUl4UUqcjqIAgidZCHl7kKSrwC3vPJSP23Dc.cache: time stamp 2017-12-29 23:14:18 is 10669.733767978 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Hg: time stamp 2017-12-29 23:14:18 is 10669.733692789 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Hy/HylEvAQ0B8EMj_kfxcCcBQUoKcQ8TcrXXX20PJo0TNU.cache: time stamp 2017-12-29 23:14:18 is 10669.733602154 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Hy: time stamp 2017-12-29 23:14:18 is 10669.733507385 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Jr/JrdyJ7LR7eD_yirnApSQaACGFLhqim-t2yS5enLy7kU.cache: time stamp 2017-12-29 23:14:18 is 10669.733383836 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Jr: time stamp 2017-12-29 23:14:18 is 10669.733165308 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/KP/KP6C5b-pFLqiJPxafFqUy2r65ktqYmRjt8lnPFOmVHU.cache: time stamp 2017-12-29 23:14:18 is 10669.73307047 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/KP: time stamp 2017-12-29 23:14:18 is 10669.732971803 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Lg/LgYUD_YpBxOfmidkIc9z0trT-Q5b_wYuAbeL89n9dM4.cache: time stamp 2017-12-29 23:14:18 is 10669.732879917 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Lg: time stamp 2017-12-29 23:14:18 is 10669.73281895 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Nx/NxK3uxVYk_FzgHgaAsE705K06wjLrn2eL1Pa-GUa32Y.cache: time stamp 2017-12-29 23:14:18 is 10669.732734424 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Nx: time stamp 2017-12-29 23:14:18 is 10669.732674526 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Po/Poy_8hruuWb0XEmTJvdgc74WXvJJbNDNpF8hwIkNfk4.cache: time stamp 2017-12-29 23:14:18 is 10669.73259011 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Po: time stamp 2017-12-29 23:14:18 is 10669.732530077 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Qe/Qe1iUtP6hTOiTjl7zebuWC_FX78cfj2_xJho6RuNZPM.cache: time stamp 2017-12-29 23:14:18 is 10669.732306938 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Qe: time stamp 2017-12-29 23:14:18 is 10669.732243088 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/SX/SXAGra6gI-OzBKJaS5NaRLm5OLWN0OC2OvyTcIt0klE.cache: time stamp 2017-12-29 23:14:18 is 10669.732156391 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/SX: time stamp 2017-12-29 23:14:18 is 10669.732093241 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Sp/SpLud9PmVXA-lBo-Fhmt-GRcwO5if78rwt4Ji4oWQF0.cache: time stamp 2017-12-29 23:14:18 is 10669.732008225 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Sp: time stamp 2017-12-29 23:14:18 is 10669.731947926 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/UR/URGtJNIeRIhgo_mmq96obDeGWAptv7JBgKgRcYvnKT0.cache: time stamp 2017-12-29 23:14:18 is 10669.731862672 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/UR: time stamp 2017-12-29 23:14:18 is 10669.731802679 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/VU/VUOOf3kLc0p2Q4mEwNnvdXbNQLVKgkAjJMkmyLG8gjQ.cache: time stamp 2017-12-29 23:14:18 is 10669.731681219 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/VU: time stamp 2017-12-29 23:14:18 is 10669.731618631 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/WX/WX4il7B1ebx_gng7BPFf_Z3Dge1xzQGPzOI6pcURBoY.cache: time stamp 2017-12-29 23:14:18 is 10669.731537566 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/WX: time stamp 2017-12-29 23:14:18 is 10669.731485843 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/YR/YRfZAOWya6QLv9b47YX03kXRDNya0OdKkfZFR4-MZNA.cache: time stamp 2017-12-29 23:14:18 is 10669.731410156 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/YR: time stamp 2017-12-29 23:14:18 is 10669.731359113 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Zk/ZkcZqMNMTYjeMJbU4BJwuRaNS5d57A7EdB17n8HG4Oo.cache: time stamp 2017-12-29 23:14:18 is 10669.731283158 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Zk: time stamp 2017-12-29 23:14:18 is 10669.731231489 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Zn/Zn2dCZmABDbZfKMjBLLxCDzs1QCOIhMFt8Q7kosbsgc.cache: time stamp 2017-12-29 23:14:18 is 10669.731156769 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Zn: time stamp 2017-12-29 23:14:18 is 10669.731105731 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Zv/ZvCEW2ZyS-k4cHH7Gd8P2nKFE9Uh1VOrfR-1PYY2yz8.cache: time stamp 2017-12-29 23:14:18 is 10669.731026317 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/Zv: time stamp 2017-12-29 23:14:18 is 10669.730975032 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/_L/_L7lsSgmY2mxsqDipTCB26XyBh_D1wQgi55B2d59Fxo.cache: time stamp 2017-12-29 23:14:18 is 10669.730867367 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/_L: time stamp 2017-12-29 23:14:18 is 10669.73081405 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/_l/_l0N97fCtV_cHoZc7Wi66rpl1HbOYrq6weGmgQM3vgY.cache: time stamp 2017-12-29 23:14:18 is 10669.730694718 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/_l: time stamp 2017-12-29 23:14:18 is 10669.730534114 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/_m/_mbaYcNVaHWcIDMW_0Msb1ckNF_1IX9REWJvSd9TCYo.cache: time stamp 2017-12-29 23:14:18 is 10669.730441798 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/_m: time stamp 2017-12-29 23:14:18 is 10669.73036827 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/aY/aYzlkpSZC0JhhFbFbmr2JwJhFlFOzuzEexGTRH4wsDE.cache: time stamp 2017-12-29 23:14:18 is 10669.730289063 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/aY: time stamp 2017-12-29 23:14:18 is 10669.73020471 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/eE/eEyBQJuVLodwH9jrMZ9x0QCsueQ6nHd1S-eaZbriE3w.cache: time stamp 2017-12-29 23:14:18 is 10669.730122722 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/eE: time stamp 2017-12-29 23:14:18 is 10669.730065934 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/f7/f7JbHcpwNPAeqg3YxYhjDtVCMhdHCZ-7NzwGuWe76Dw.cache: time stamp 2017-12-29 23:14:18 is 10669.729988895 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/f7/f7fLc3x4jEl7qvZy3H3rO4is14WOmsAeQPxktws6WF8.cache: time stamp 2017-12-29 23:14:18 is 10669.729897109 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/f7: time stamp 2017-12-29 23:14:18 is 10669.729843064 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/fD/fDFMHDGIInzhltFwnggT2X6su5D0NEC11wNS-kkeFgc.cache: time stamp 2017-12-29 23:14:18 is 10669.729765159 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/fD: time stamp 2017-12-29 23:14:18 is 10669.729713119 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/fa/facRHJAjfDG6rC8DdpJgzmwroD3-yf8Ovr1r-DzzZHQ.cache: time stamp 2017-12-29 23:14:18 is 10669.729585995 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/fa: time stamp 2017-12-29 23:14:18 is 10669.729531871 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/fk/fkQ5WUTuo6XAU-3oSlJHgvjSTfQ8Ife-luG-1hfN350.cache: time stamp 2017-12-29 23:14:18 is 10669.729451805 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/fk: time stamp 2017-12-29 23:14:18 is 10669.729398969 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/fq/fq4J-l5r44Pi9yai1Yl_zsO9Ixl2Tb04GOmQMAeHB30.cache: time stamp 2017-12-29 23:14:18 is 10669.729318686 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/fq: time stamp 2017-12-29 23:14:18 is 10669.72926651 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/fz/fz-jd9RnxUsS7qBn0XbTR9KP_nIkpxuNuFfn2wQvz18.cache: time stamp 2017-12-29 23:14:18 is 10669.729189044 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/fz: time stamp 2017-12-29 23:14:18 is 10669.729137438 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/g6/g63KPfx1G_XnDsUtCk8cjhLLmubx4Ep_TAmhe4aI8qQ.cache: time stamp 2017-12-29 23:14:18 is 10669.728906644 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/g6: time stamp 2017-12-29 23:14:18 is 10669.728849666 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/gW/gWYvC_yScE7VoZYWxJwncMvdz3TKhn5ksRCSpshpzsE.cache: time stamp 2017-12-29 23:14:18 is 10669.728768082 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/gW: time stamp 2017-12-29 23:14:18 is 10669.728715631 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/i-/i-arGVD4oKYQEv1E0A33ijHVHmESSoFG8174dLN3Hdc.cache: time stamp 2017-12-29 23:14:18 is 10669.728633935 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/i-: time stamp 2017-12-29 23:14:18 is 10669.728582078 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/jI/jIAFW-Dj0fCl7Z2limn5AIx6BLeS_dKnP_HZBm4M7mg.cache: time stamp 2017-12-29 23:14:18 is 10669.72850485 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/jI: time stamp 2017-12-29 23:14:18 is 10669.728453109 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/o9/o9Mi_ZdCVjjQUZlYT6hVbm7ybrQBQB2DDCdnghmCeWI.cache: time stamp 2017-12-29 23:14:18 is 10669.72837451 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/o9: time stamp 2017-12-29 23:14:18 is 10669.728323015 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/oU/oUXi2NRFPWci4Zr1f5L1B6XHQr8Rnh66THHUiPR9Ki8.cache: time stamp 2017-12-29 23:14:18 is 10669.728203282 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/oU: time stamp 2017-12-29 23:14:18 is 10669.728149575 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/oh/ohK_SMZz7iLC-y-rD4qBQVhfqvUIFvIrLhZYY4lePL8.cache: time stamp 2017-12-29 23:14:18 is 10669.728071189 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/oh: time stamp 2017-12-29 23:14:18 is 10669.728019412 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/oy/oyr8qgPWr5SJz31vk9xg8AbEKmAPw-JP02mYXkKm0ds.cache: time stamp 2017-12-29 23:14:18 is 10669.727943367 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/oy: time stamp 2017-12-29 23:14:18 is 10669.727890929 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/rM/rMWGWNRkmt8ACZazESO0PQX39WV-XBoaPSsjbPRCceU.cache: time stamp 2017-12-29 23:14:18 is 10669.727814794 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/rM: time stamp 2017-12-29 23:14:18 is 10669.727763173 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/sY/sYTSiD1dFW6gw23-7xFzlVhyuPOmzCXwEv7mSB4i5Fk.cache: time stamp 2017-12-29 23:14:18 is 10669.727684996 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/sY: time stamp 2017-12-29 23:14:18 is 10669.727629486 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/sh/shYsepkrehNsUcrAHTkl_qrpcyMXnXZP4o0rxD4WmQQ.cache: time stamp 2017-12-29 23:14:18 is 10669.727223878 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/sh: time stamp 2017-12-29 23:14:18 is 10669.727168736 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/tI/tIDIORtt_3SJw1KcHz4_J2f4nkUsoRjWEpx0j6QajRc.cache: time stamp 2017-12-29 23:14:18 is 10669.727081779 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/tI: time stamp 2017-12-29 23:14:18 is 10669.727029689 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/u1/u1juW2Fy1Kj8JoVpGLyoIpwHAy01m7gjT-w_mHtfxaw.cache: time stamp 2017-12-29 23:14:18 is 10669.72695054 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/u1: time stamp 2017-12-29 23:14:18 is 10669.726898578 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/uq/uq_pa38NT_80Ry9_qSqZ0_fqklqS1eXaMJgIgIJ7FI8.cache: time stamp 2017-12-29 23:14:18 is 10669.726820621 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/uq: time stamp 2017-12-29 23:14:18 is 10669.726768264 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/vC/vCsXa1xSki9VzpRtJPz07v1kYojeWy8hFmlkaNHhFWw.cache: time stamp 2017-12-29 23:14:18 is 10669.726692558 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/vC: time stamp 2017-12-29 23:14:18 is 10669.72664114 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/vF/vFISVUA_93Mm3FcKEkYpLQLuvPrtYDo8WZylDfcspBM.cache: time stamp 2017-12-29 23:14:18 is 10669.726557962 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/vF: time stamp 2017-12-29 23:14:18 is 10669.726506357 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/vp/vpOhIpWQbnvL4kC2VJrogMGSFmaR4FUkI3p-iEaI6PA.cache: time stamp 2017-12-29 23:14:18 is 10669.726431135 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/vp: time stamp 2017-12-29 23:14:18 is 10669.726380141 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/wr/wrsyWnoIU4GIBrDGrTWtotT6VcO4-4hWFZRAvFJ0g0k.cache: time stamp 2017-12-29 23:14:18 is 10669.72629313 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/wr: time stamp 2017-12-29 23:14:18 is 10669.726240768 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/wt/wtM6mNpsynRrNxyGw0YoheCGaMvUaQt4dAikeNNRpvM.cache: time stamp 2017-12-29 23:14:18 is 10669.726148331 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/wt: time stamp 2017-12-29 23:14:18 is 10669.726095721 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/wv/wv0d2GmJxYzG_aGtuNpCfHgus9HncieHEjshGKDKgh4.cache: time stamp 2017-12-29 23:14:18 is 10669.726018555 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/wv: time stamp 2017-12-29 23:14:18 is 10669.725967043 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/xi/xizra9Al_J6snqWZx4tCfeCn_s1L0n5QsI1_grPdwAk.cache: time stamp 2017-12-29 23:14:18 is 10669.725891765 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/xi: time stamp 2017-12-29 23:14:18 is 10669.725836811 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/zG/zGvSYEqCIy-gpJcabAiJSsvB45R5B9_3GzwQQuYjm0Q.cache: time stamp 2017-12-29 23:14:18 is 10669.725760483 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/zG: time stamp 2017-12-29 23:14:18 is 10669.725708687 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/zf/zfxe4ZI017_s2GCXSbpm23PFOS1Ogzijb8-gGVndX40.cache: time stamp 2017-12-29 23:14:18 is 10669.725629983 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0/zf: time stamp 2017-12-29 23:14:18 is 10669.725578721 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets/v3.0: time stamp 2017-12-29 23:14:18 is 10669.725536483 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets/sprockets: time stamp 2017-12-29 23:14:18 is 10669.725496294 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache/assets: time stamp 2017-12-29 23:14:18 is 10669.725456931 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/cache: time stamp 2017-12-29 23:14:18 is 10669.725413695 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp/restart.txt: time stamp 2017-12-29 23:14:18 is 10669.725362574 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	tmp: time stamp 2017-12-29 23:14:18 is 10669.725314521 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	vendor/.keep: time stamp 2017-12-29 23:14:18 is 10669.725241381 s in the future
+ DEBUG [fb357539] 	
+ DEBUG [fb357539] 	tar: 
+ DEBUG [fb357539] 	vendor: time stamp 2017-12-29 23:14:18 is 10669.725186588 s in the future
+ DEBUG [fb357539] 	
+  INFO [fb357539] Finished in 5.364 seconds with exit status 0 (successful).
+ DEBUG [f52d7a6b] Running if test ! -d /var/www/Pushkin/repo; then echo "Directory does not exist '/var/www/Pushkin/repo'" 1>&2; false; fi as deployer@92.53.91.88
+ DEBUG [f52d7a6b] Command: if test ! -d /var/www/Pushkin/repo; then echo "Directory does not exist '/var/www/Pushkin/repo'" 1>&2; false; fi
+ DEBUG [f52d7a6b] Finished in 0.879 seconds with exit status 0 (successful).
+ DEBUG [b5c87604] Running /usr/bin/env git rev-list --max-count=1 master as deployer@92.53.91.88
+ DEBUG [b5c87604] Command: cd /var/www/Pushkin/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Pushkin-production-nikita.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [b5c87604] 	8208b059271028f96b7daa160270eb858ccd52b9
+ DEBUG [b5c87604] Finished in 0.795 seconds with exit status 0 (successful).
+ DEBUG [05cf05e9] Running if test ! -d /var/www/Pushkin/releases/20171229201522; then echo "Directory does not exist '/var/www/Pushkin/releases/20171229201522'" 1>&2; false; fi as deployer@92.53.91.88
+ DEBUG [05cf05e9] Command: if test ! -d /var/www/Pushkin/releases/20171229201522; then echo "Directory does not exist '/var/www/Pushkin/releases/20171229201522'" 1>&2; false; fi
+ DEBUG [05cf05e9] Finished in 0.815 seconds with exit status 0 (successful).
+  INFO [6528c013] Running /usr/bin/env echo "8208b059271028f96b7daa160270eb858ccd52b9" >> REVISION as deployer@92.53.91.88
+ DEBUG [6528c013] Command: cd /var/www/Pushkin/releases/20171229201522 && /usr/bin/env echo "8208b059271028f96b7daa160270eb858ccd52b9" >> REVISION
+  INFO [6528c013] Finished in 1.107 seconds with exit status 0 (successful).
+  INFO [6f479527] Running /usr/bin/env mkdir -p /var/www/Pushkin/releases/20171229201522/config as deployer@92.53.91.88
+ DEBUG [6f479527] Command: /usr/bin/env mkdir -p /var/www/Pushkin/releases/20171229201522/config
+  INFO [6f479527] Finished in 0.831 seconds with exit status 0 (successful).
+ DEBUG [bb7ecfe0] Running [ -L /var/www/Pushkin/releases/20171229201522/config/database.yml ] as deployer@92.53.91.88
+ DEBUG [bb7ecfe0] Command: [ -L /var/www/Pushkin/releases/20171229201522/config/database.yml ]
+ DEBUG [bb7ecfe0] Finished in 2.336 seconds with exit status 1 (failed).
+ DEBUG [bdaddbe1] Running [ -f /var/www/Pushkin/releases/20171229201522/config/database.yml ] as deployer@92.53.91.88
+ DEBUG [bdaddbe1] Command: [ -f /var/www/Pushkin/releases/20171229201522/config/database.yml ]
+ DEBUG [bdaddbe1] Finished in 1.231 seconds with exit status 0 (successful).
+  INFO [698767bf] Running /usr/bin/env rm /var/www/Pushkin/releases/20171229201522/config/database.yml as deployer@92.53.91.88
+ DEBUG [698767bf] Command: /usr/bin/env rm /var/www/Pushkin/releases/20171229201522/config/database.yml
+  INFO [698767bf] Finished in 2.975 seconds with exit status 0 (successful).
+  INFO [42b30433] Running /usr/bin/env ln -s /var/www/Pushkin/shared/config/database.yml /var/www/Pushkin/releases/20171229201522/config/database.yml as deployer@92.53.91.88
+ DEBUG [42b30433] Command: /usr/bin/env ln -s /var/www/Pushkin/shared/config/database.yml /var/www/Pushkin/releases/20171229201522/config/database.yml
+  INFO [42b30433] Finished in 1.868 seconds with exit status 0 (successful).
+ DEBUG [196f3276] Running [ -L /var/www/Pushkin/releases/20171229201522/config/secrets.yml ] as deployer@92.53.91.88
+ DEBUG [196f3276] Command: [ -L /var/www/Pushkin/releases/20171229201522/config/secrets.yml ]
+ DEBUG [196f3276] Finished in 1.438 seconds with exit status 1 (failed).
+ DEBUG [4223dd43] Running [ -f /var/www/Pushkin/releases/20171229201522/config/secrets.yml ] as deployer@92.53.91.88
+ DEBUG [4223dd43] Command: [ -f /var/www/Pushkin/releases/20171229201522/config/secrets.yml ]
+ DEBUG [4223dd43] Finished in 1.090 seconds with exit status 0 (successful).
+  INFO [fbcb907c] Running /usr/bin/env rm /var/www/Pushkin/releases/20171229201522/config/secrets.yml as deployer@92.53.91.88
+ DEBUG [fbcb907c] Command: /usr/bin/env rm /var/www/Pushkin/releases/20171229201522/config/secrets.yml
+  INFO [fbcb907c] Finished in 0.978 seconds with exit status 0 (successful).
+  INFO [c1986d1f] Running /usr/bin/env ln -s /var/www/Pushkin/shared/config/secrets.yml /var/www/Pushkin/releases/20171229201522/config/secrets.yml as deployer@92.53.91.88
+ DEBUG [c1986d1f] Command: /usr/bin/env ln -s /var/www/Pushkin/shared/config/secrets.yml /var/www/Pushkin/releases/20171229201522/config/secrets.yml
+  INFO [c1986d1f] Finished in 1.088 seconds with exit status 0 (successful).
+  INFO [cdb8463a] Running /usr/bin/env mkdir -p /var/www/Pushkin/releases/20171229201522 /var/www/Pushkin/releases/20171229201522/tmp /var/www/Pushkin/releases/20171229201522/public /var/www/Pushkin/releases/20171229201522/vendor as deployer@92.53.91.88
+ DEBUG [cdb8463a] Command: /usr/bin/env mkdir -p /var/www/Pushkin/releases/20171229201522 /var/www/Pushkin/releases/20171229201522/tmp /var/www/Pushkin/releases/20171229201522/public /var/www/Pushkin/releases/20171229201522/vendor
+  INFO [cdb8463a] Finished in 0.585 seconds with exit status 0 (successful).
+ DEBUG [7c0b4015] Running [ -L /var/www/Pushkin/releases/20171229201522/log ] as deployer@92.53.91.88
+ DEBUG [7c0b4015] Command: [ -L /var/www/Pushkin/releases/20171229201522/log ]
+ DEBUG [7c0b4015] Finished in 0.628 seconds with exit status 1 (failed).
+ DEBUG [b94d4bb3] Running [ -d /var/www/Pushkin/releases/20171229201522/log ] as deployer@92.53.91.88
+ DEBUG [b94d4bb3] Command: [ -d /var/www/Pushkin/releases/20171229201522/log ]
+ DEBUG [b94d4bb3] Finished in 1.753 seconds with exit status 0 (successful).
+  INFO [56a8551e] Running /usr/bin/env rm -rf /var/www/Pushkin/releases/20171229201522/log as deployer@92.53.91.88
+ DEBUG [56a8551e] Command: /usr/bin/env rm -rf /var/www/Pushkin/releases/20171229201522/log
+  INFO [56a8551e] Finished in 2.174 seconds with exit status 0 (successful).
+  INFO [155dba93] Running /usr/bin/env ln -s /var/www/Pushkin/shared/log /var/www/Pushkin/releases/20171229201522/log as deployer@92.53.91.88
+ DEBUG [155dba93] Command: /usr/bin/env ln -s /var/www/Pushkin/shared/log /var/www/Pushkin/releases/20171229201522/log
+  INFO [155dba93] Finished in 2.971 seconds with exit status 0 (successful).
+ DEBUG [7e4246f8] Running [ -L /var/www/Pushkin/releases/20171229201522/tmp/pids ] as deployer@92.53.91.88
+ DEBUG [7e4246f8] Command: [ -L /var/www/Pushkin/releases/20171229201522/tmp/pids ]
+ DEBUG [7e4246f8] Finished in 0.978 seconds with exit status 1 (failed).
+ DEBUG [d740e536] Running [ -d /var/www/Pushkin/releases/20171229201522/tmp/pids ] as deployer@92.53.91.88
+ DEBUG [d740e536] Command: [ -d /var/www/Pushkin/releases/20171229201522/tmp/pids ]
+ DEBUG [d740e536] Finished in 1.200 seconds with exit status 1 (failed).
+  INFO [f185f2ff] Running /usr/bin/env ln -s /var/www/Pushkin/shared/tmp/pids /var/www/Pushkin/releases/20171229201522/tmp/pids as deployer@92.53.91.88
+ DEBUG [f185f2ff] Command: /usr/bin/env ln -s /var/www/Pushkin/shared/tmp/pids /var/www/Pushkin/releases/20171229201522/tmp/pids
+  INFO [f185f2ff] Finished in 3.886 seconds with exit status 0 (successful).
+ DEBUG [349fbcb2] Running [ -L /var/www/Pushkin/releases/20171229201522/public/assets ] as deployer@92.53.91.88
+ DEBUG [349fbcb2] Command: [ -L /var/www/Pushkin/releases/20171229201522/public/assets ]
+ DEBUG [349fbcb2] Finished in 3.102 seconds with exit status 1 (failed).
+ DEBUG [5e2e4202] Running [ -d /var/www/Pushkin/releases/20171229201522/public/assets ] as deployer@92.53.91.88
+ DEBUG [5e2e4202] Command: [ -d /var/www/Pushkin/releases/20171229201522/public/assets ]
+ DEBUG [5e2e4202] Finished in 0.438 seconds with exit status 1 (failed).
+  INFO [d9942017] Running /usr/bin/env ln -s /var/www/Pushkin/shared/public/assets /var/www/Pushkin/releases/20171229201522/public/assets as deployer@92.53.91.88
+ DEBUG [d9942017] Command: /usr/bin/env ln -s /var/www/Pushkin/shared/public/assets /var/www/Pushkin/releases/20171229201522/public/assets
+  INFO [d9942017] Finished in 1.700 seconds with exit status 0 (successful).
+ DEBUG [cab1acf5] Running [ -L /var/www/Pushkin/releases/20171229201522/tmp/cache ] as deployer@92.53.91.88
+ DEBUG [cab1acf5] Command: [ -L /var/www/Pushkin/releases/20171229201522/tmp/cache ]
+ DEBUG [cab1acf5] Finished in 1.325 seconds with exit status 1 (failed).
+ DEBUG [9352512d] Running [ -d /var/www/Pushkin/releases/20171229201522/tmp/cache ] as deployer@92.53.91.88
+ DEBUG [9352512d] Command: [ -d /var/www/Pushkin/releases/20171229201522/tmp/cache ]
+ DEBUG [9352512d] Finished in 3.427 seconds with exit status 0 (successful).
+  INFO [74fa229f] Running /usr/bin/env rm -rf /var/www/Pushkin/releases/20171229201522/tmp/cache as deployer@92.53.91.88
+ DEBUG [74fa229f] Command: /usr/bin/env rm -rf /var/www/Pushkin/releases/20171229201522/tmp/cache
+  INFO [74fa229f] Finished in 0.578 seconds with exit status 0 (successful).
+  INFO [94d213be] Running /usr/bin/env ln -s /var/www/Pushkin/shared/tmp/cache /var/www/Pushkin/releases/20171229201522/tmp/cache as deployer@92.53.91.88
+ DEBUG [94d213be] Command: /usr/bin/env ln -s /var/www/Pushkin/shared/tmp/cache /var/www/Pushkin/releases/20171229201522/tmp/cache
+  INFO [94d213be] Finished in 2.765 seconds with exit status 0 (successful).
+ DEBUG [f1849b06] Running [ -L /var/www/Pushkin/releases/20171229201522/tmp/sockets ] as deployer@92.53.91.88
+ DEBUG [f1849b06] Command: [ -L /var/www/Pushkin/releases/20171229201522/tmp/sockets ]
+ DEBUG [f1849b06] Finished in 2.548 seconds with exit status 1 (failed).
+ DEBUG [a0879124] Running [ -d /var/www/Pushkin/releases/20171229201522/tmp/sockets ] as deployer@92.53.91.88
+ DEBUG [a0879124] Command: [ -d /var/www/Pushkin/releases/20171229201522/tmp/sockets ]
+ DEBUG [a0879124] Finished in 0.560 seconds with exit status 1 (failed).
+  INFO [9595e869] Running /usr/bin/env ln -s /var/www/Pushkin/shared/tmp/sockets /var/www/Pushkin/releases/20171229201522/tmp/sockets as deployer@92.53.91.88
+ DEBUG [9595e869] Command: /usr/bin/env ln -s /var/www/Pushkin/shared/tmp/sockets /var/www/Pushkin/releases/20171229201522/tmp/sockets
+  INFO [9595e869] Finished in 2.038 seconds with exit status 0 (successful).
+ DEBUG [dfdc0dd9] Running [ -L /var/www/Pushkin/releases/20171229201522/vendor/bundle ] as deployer@92.53.91.88
+ DEBUG [dfdc0dd9] Command: [ -L /var/www/Pushkin/releases/20171229201522/vendor/bundle ]
+ DEBUG [dfdc0dd9] Finished in 1.675 seconds with exit status 1 (failed).
+ DEBUG [80d68ba9] Running [ -d /var/www/Pushkin/releases/20171229201522/vendor/bundle ] as deployer@92.53.91.88
+ DEBUG [80d68ba9] Command: [ -d /var/www/Pushkin/releases/20171229201522/vendor/bundle ]
+ DEBUG [80d68ba9] Finished in 0.362 seconds with exit status 1 (failed).
+  INFO [14c635a2] Running /usr/bin/env ln -s /var/www/Pushkin/shared/vendor/bundle /var/www/Pushkin/releases/20171229201522/vendor/bundle as deployer@92.53.91.88
+ DEBUG [14c635a2] Command: /usr/bin/env ln -s /var/www/Pushkin/shared/vendor/bundle /var/www/Pushkin/releases/20171229201522/vendor/bundle
+  INFO [14c635a2] Finished in 1.518 seconds with exit status 0 (successful).
+ DEBUG [de336e83] Running [ -L /var/www/Pushkin/releases/20171229201522/public/system ] as deployer@92.53.91.88
+ DEBUG [de336e83] Command: [ -L /var/www/Pushkin/releases/20171229201522/public/system ]
+ DEBUG [de336e83] Finished in 4.608 seconds with exit status 1 (failed).
+ DEBUG [87590aa4] Running [ -d /var/www/Pushkin/releases/20171229201522/public/system ] as deployer@92.53.91.88
+ DEBUG [87590aa4] Command: [ -d /var/www/Pushkin/releases/20171229201522/public/system ]
+ DEBUG [87590aa4] Finished in 1.460 seconds with exit status 1 (failed).
+  INFO [bd1cc5bc] Running /usr/bin/env ln -s /var/www/Pushkin/shared/public/system /var/www/Pushkin/releases/20171229201522/public/system as deployer@92.53.91.88
+ DEBUG [bd1cc5bc] Command: /usr/bin/env ln -s /var/www/Pushkin/shared/public/system /var/www/Pushkin/releases/20171229201522/public/system
+  INFO [bd1cc5bc] Finished in 3.405 seconds with exit status 0 (successful).
+ DEBUG [f9825d8f] Running if test ! -d /var/www/Pushkin/releases/20171229201522; then echo "Directory does not exist '/var/www/Pushkin/releases/20171229201522'" 1>&2; false; fi as deployer@92.53.91.88
+ DEBUG [f9825d8f] Command: if test ! -d /var/www/Pushkin/releases/20171229201522; then echo "Directory does not exist '/var/www/Pushkin/releases/20171229201522'" 1>&2; false; fi
+ DEBUG [f9825d8f] Finished in 0.539 seconds with exit status 0 (successful).
+ DEBUG [9b28dd0a] Running ~/.rvm/bin/rvm 2.4.0 do bundle check --path /var/www/Pushkin/shared/bundle as deployer@92.53.91.88
+ DEBUG [9b28dd0a] Command: cd /var/www/Pushkin/releases/20171229201522 && ~/.rvm/bin/rvm 2.4.0 do bundle check --path /var/www/Pushkin/shared/bundle
+ DEBUG [9b28dd0a] 	https://github.com/seuros/capistrano-puma.git (at master@81647bc) is not yet
+checked out. Run `bundle install` first.
+ DEBUG [9b28dd0a] Finished in 1.486 seconds with exit status 11 (failed).
+  INFO [0dbe6eb6] Running ~/.rvm/bin/rvm 2.4.0 do bundle install --path /var/www/Pushkin/shared/bundle --without development test --deployment --quiet as deployer@92.53.91.88
+ DEBUG [0dbe6eb6] Command: cd /var/www/Pushkin/releases/20171229201522 && ~/.rvm/bin/rvm 2.4.0 do bundle install --path /var/www/Pushkin/shared/bundle --without development test --deployment --quiet
+  INFO [0dbe6eb6] Finished in 2.422 seconds with exit status 0 (successful).
+ DEBUG [8acbd7ab] Running if test ! -d /var/www/Pushkin/releases/20171229201522; then echo "Directory does not exist '/var/www/Pushkin/releases/20171229201522'" 1>&2; false; fi as deployer@92.53.91.88
+ DEBUG [8acbd7ab] Command: if test ! -d /var/www/Pushkin/releases/20171229201522; then echo "Directory does not exist '/var/www/Pushkin/releases/20171229201522'" 1>&2; false; fi
+ DEBUG [8acbd7ab] Finished in 2.655 seconds with exit status 0 (successful).
+  INFO [a61a1c74] Running ~/.rvm/bin/rvm 2.4.0 do bundle exec rake assets:precompile as deployer@92.53.91.88
+ DEBUG [a61a1c74] Command: cd /var/www/Pushkin/releases/20171229201522 && ( export RAILS_ENV="production" RAILS_GROUPS="" ; ~/.rvm/bin/rvm 2.4.0 do bundle exec rake assets:precompile )
+ DEBUG [a61a1c74] 	Yarn executable was not detected in the system.
+ DEBUG [a61a1c74] 	
+ DEBUG [a61a1c74] 	Download Yarn at https://yarnpkg.com/en/docs/install
+ DEBUG [a61a1c74] 	
+  INFO [a61a1c74] Finished in 6.234 seconds with exit status 0 (successful).
+ DEBUG [d68e81d1] Running if test ! -d /var/www/Pushkin/releases/20171229201522; then echo "Directory does not exist '/var/www/Pushkin/releases/20171229201522'" 1>&2; false; fi as deployer@92.53.91.88
+ DEBUG [d68e81d1] Command: if test ! -d /var/www/Pushkin/releases/20171229201522; then echo "Directory does not exist '/var/www/Pushkin/releases/20171229201522'" 1>&2; false; fi
+ DEBUG [d68e81d1] Finished in 1.648 seconds with exit status 0 (successful).
+  INFO [e501c152] Running /usr/bin/env mkdir -p /var/www/Pushkin/releases/20171229201522/assets_manifest_backup as deployer@92.53.91.88
+ DEBUG [e501c152] Command: cd /var/www/Pushkin/releases/20171229201522 && /usr/bin/env mkdir -p /var/www/Pushkin/releases/20171229201522/assets_manifest_backup
+  INFO [e501c152] Finished in 2.584 seconds with exit status 0 (successful).
+ DEBUG [470ca37f] Running /usr/bin/env ls /var/www/Pushkin/releases/20171229201522/public/assets/.sprockets-manifest* as deployer@92.53.91.88
+ DEBUG [470ca37f] Command: cd /var/www/Pushkin/releases/20171229201522 && /usr/bin/env ls /var/www/Pushkin/releases/20171229201522/public/assets/.sprockets-manifest*
+ DEBUG [470ca37f] 	/var/www/Pushkin/releases/20171229201522/public/assets/.sprockets-manifest-f82099125c69254f8f178f1ce1d23cc4.json
+ DEBUG [470ca37f] Finished in 3.251 seconds with exit status 0 (successful).
+ DEBUG [7b71229e] Running /usr/bin/env ls /var/www/Pushkin/releases/20171229201522/public/assets/.sprockets-manifest* as deployer@92.53.91.88
+ DEBUG [7b71229e] Command: cd /var/www/Pushkin/releases/20171229201522 && /usr/bin/env ls /var/www/Pushkin/releases/20171229201522/public/assets/.sprockets-manifest*
+ DEBUG [7b71229e] 	/var/www/Pushkin/releases/20171229201522/public/assets/.sprockets-manifest-f82099125c69254f8f178f1ce1d23cc4.json
+ DEBUG [7b71229e] Finished in 2.631 seconds with exit status 0 (successful).
+  INFO [9b2b427d] Running /usr/bin/env cp /var/www/Pushkin/releases/20171229201522/public/assets/.sprockets-manifest-f82099125c69254f8f178f1ce1d23cc4.json /var/www/Pushkin/releases/20171229201522/assets_manifest_backup as deployer@92.53.91.88
+ DEBUG [9b2b427d] Command: cd /var/www/Pushkin/releases/20171229201522 && /usr/bin/env cp /var/www/Pushkin/releases/20171229201522/public/assets/.sprockets-manifest-f82099125c69254f8f178f1ce1d23cc4.json /var/www/Pushkin/releases/20171229201522/assets_manifest_backup
+  INFO [9b2b427d] Finished in 5.050 seconds with exit status 0 (successful).
+  INFO [432eb01b] Running /usr/bin/env ln -s /var/www/Pushkin/releases/20171229201522 /var/www/Pushkin/releases/current as deployer@92.53.91.88
+ DEBUG [432eb01b] Command: /usr/bin/env ln -s /var/www/Pushkin/releases/20171229201522 /var/www/Pushkin/releases/current
+  INFO [432eb01b] Finished in 2.286 seconds with exit status 0 (successful).
+  INFO [32abe242] Running /usr/bin/env mv /var/www/Pushkin/releases/current /var/www/Pushkin as deployer@92.53.91.88
+ DEBUG [32abe242] Command: /usr/bin/env mv /var/www/Pushkin/releases/current /var/www/Pushkin
+  INFO [32abe242] Finished in 5.400 seconds with exit status 0 (successful).
+ DEBUG [8a44661f] Running /usr/bin/env ls -x /var/www/Pushkin/releases as deployer@92.53.91.88
+ DEBUG [8a44661f] Command: /usr/bin/env ls -x /var/www/Pushkin/releases
+ DEBUG [8a44661f] 	20171229193747	20171229194232	20171229195201	20171229200129	20171229200911
+20171229201522
+ DEBUG [8a44661f] Finished in 3.061 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 92.53.91.88
+  INFO [69f204f4] Running /usr/bin/env rm -rf /var/www/Pushkin/releases/20171229193747 as deployer@92.53.91.88
+ DEBUG [69f204f4] Command: /usr/bin/env rm -rf /var/www/Pushkin/releases/20171229193747
+  INFO [69f204f4] Finished in 1.483 seconds with exit status 0 (successful).
+ DEBUG [f80d6427] Running if test ! -d /var/www/Pushkin/releases; then echo "Directory does not exist '/var/www/Pushkin/releases'" 1>&2; false; fi as deployer@92.53.91.88
+ DEBUG [f80d6427] Command: if test ! -d /var/www/Pushkin/releases; then echo "Directory does not exist '/var/www/Pushkin/releases'" 1>&2; false; fi
+ DEBUG [f80d6427] Finished in 2.248 seconds with exit status 0 (successful).
+  INFO [b2be94f5] Running /usr/bin/env echo "Branch master (at 8208b059271028f96b7daa160270eb858ccd52b9) deployed as release 20171229201522 by nikita" >> /var/www/Pushkin/revisions.log as deployer@92.53.91.88
+ DEBUG [b2be94f5] Command: cd /var/www/Pushkin/releases && /usr/bin/env echo "Branch master (at 8208b059271028f96b7daa160270eb858ccd52b9) deployed as release 20171229201522 by nikita" >> /var/www/Pushkin/revisions.log
+  INFO [b2be94f5] Finished in 0.516 seconds with exit status 0 (successful).
+ DEBUG [70d81883] Running if test ! -d /var/www/Pushkin/current; then echo "Directory does not exist '/var/www/Pushkin/current'" 1>&2; false; fi as deployer@92.53.91.88
+ DEBUG [70d81883] Command: if test ! -d /var/www/Pushkin/current; then echo "Directory does not exist '/var/www/Pushkin/current'" 1>&2; false; fi
+ DEBUG [70d81883] Finished in 2.556 seconds with exit status 0 (successful).
+ DEBUG [0ed97153] Running [ -f /var/www/Pushkin/shared/tmp/pids/puma.pid ] as deployer@92.53.91.88
+ DEBUG [0ed97153] Command: [ -f /var/www/Pushkin/shared/tmp/pids/puma.pid ]
+ DEBUG [0ed97153] Finished in 1.633 seconds with exit status 0 (successful).
+ DEBUG [2fc7bf03] Running /usr/bin/env kill -0 $( cat /var/www/Pushkin/shared/tmp/pids/puma.pid ) as deployer@92.53.91.88
+ DEBUG [2fc7bf03] Command: cd /var/www/Pushkin/current && ( export RACK_ENV="production" ; /usr/bin/env kill -0 $( cat /var/www/Pushkin/shared/tmp/pids/puma.pid ) )
+ DEBUG [2fc7bf03] Finished in 1.683 seconds with exit status 0 (successful).
+  INFO [9736b545] Running ~/.rvm/bin/rvm 2.4.0 do bundle exec pumactl -S /var/www/Pushkin/shared/tmp/pids/puma.state -F /var/www/Pushkin/shared/puma.rb restart as deployer@92.53.91.88
+ DEBUG [9736b545] Command: cd /var/www/Pushkin/current && ( export RACK_ENV="production" ; ~/.rvm/bin/rvm 2.4.0 do bundle exec pumactl -S /var/www/Pushkin/shared/tmp/pids/puma.state -F /var/www/Pushkin/shared/puma.rb restart )
+ DEBUG [9736b545] 	Command restart sent success
+  INFO [9736b545] Finished in 2.650 seconds with exit status 0 (successful).

@@ -22,6 +22,27 @@ class QuizController < ApplicationController
           break
         end
       end
+    when 2
+      string_part = string.split('%WORD%')
+      info.size.times do |i|
+        answer = nil
+        if string_part[0].empty? && info[i][1].include?(string_part[1])
+          answer = info[i][1].split(string_part[1])
+          answer = answer[0]
+        end
+        if string_part[1].nil? && info[i][1].include?(string_part[0])
+          answer = info[i][1].split(string_part[0])
+          answer = answer[1]
+        end
+        if info[i][1].include?(string_part[0]) && info[i][1].include?(string_part[1])
+          answer = info[i][1].split(string_part[0])
+          answer = answer[1].split(string_part[1])
+          answer = answer[0]
+        end
+        if answer != nil
+          break
+        end
+      end
     end
     if answer
       uri_app = URI('http://pushkin.rubyroidlabs.com/quiz')
