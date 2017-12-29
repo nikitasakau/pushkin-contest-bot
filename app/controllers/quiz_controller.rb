@@ -47,6 +47,7 @@ class QuizController < ApplicationController
       string = string.split('\n')
       devited_first = string[0].split('%WORD%')
       devited_second = string[1].split('%WORD%')
+      answer = []
       info.size.times do |i|
         devited_info = info[i][1].split(/\n/)
         devited_info.size.times do |j|
@@ -79,7 +80,9 @@ class QuizController < ApplicationController
                 answer2 = answer2[1].split(devited_second[1])
                 answer2 = answer2[0]
               end
-              answer = answer1 + "," + answer2
+              answer << answer1
+              answer << answer2
+              answer = answer.join(",")
               break
             end
           end
