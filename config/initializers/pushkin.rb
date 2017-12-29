@@ -1,8 +1,6 @@
 class Pushkin
-	def self.up(level, string)
-		info_string = File.read('database.json')
-    info = JSON.parse(info_string)
-    if level == 1
+	def self.up(level, string, info)
+    		if level == 1
 			return Pushkin.level1(info, string)
 		end
 		if level == 2
