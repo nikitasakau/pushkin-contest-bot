@@ -52,12 +52,12 @@ class QuizController < ApplicationController
         devited_info.size.times do |j|
           if devited_info[j].include?(devited_first[0]) && devited_info[j].include?(devited_first[1])
             if devited_info[j+1].include?(devited_second[0]) && devited_info[j+1].include?(devited_second[1])
-              string[0] = string[0].tr(',','').tr('!','').tr('.','').tr(';','').tr('—','').tr('?','').tr(':','')
-              string[1] = string[1].tr(',','').tr('!','').tr('.','').tr(';','').tr('—','').tr('?','').tr(':','')
+              string[0] = string[0]
+              string[1] = string[1]
               string_with_variable_1 = string[0].split
               string_with_variable_2 = string[1].split
-              string_without_variable_1 = devited_info[j].tr(',','').tr('!','').tr('.','').tr(';','').tr('—','').tr('?','').tr(':','').split
-              string_without_variable_2 = devited_info[j+1].tr(',','').tr('!','').tr('.','').tr(';','').tr('—','').tr('?','').tr(':','').split
+              string_without_variable_1 = devited_info[j].split
+              string_without_variable_2 = devited_info[j+1].split
               string_with_variable_1.size.times do |k|
                 if string_with_variable_1[k] == "%WORD%"
                   answer1 = string_without_variable_1[k]
