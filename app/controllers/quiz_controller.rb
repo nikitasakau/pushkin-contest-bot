@@ -47,9 +47,7 @@ class QuizController < ApplicationController
       string = string.split('\n')
       devited_first = string[0].split('%WORD%')
       devited_second = string[1].split('%WORD%')
-      answer = nil
-      answer1 = nil
-      answer2 = nil
+      answer = []
       info.size.times do |i|
         devited_info = info[i][1].split("\n")
         devited_info.size.times do |j|
@@ -63,13 +61,13 @@ class QuizController < ApplicationController
               string_without_variable_2 = devited_info[j+1].tr(',','').tr('!','').tr('.','').tr(';','').tr('—','').tr('?','').tr(':','').split
               string_with_variable_1.size.times do |k|
                 if string_with_variable_1[k] == "%WORD%"
-                  answer1 = string_without_variable_1[k]
+                  answer << string_without_variable_1[k]
                   break
                 end
               end
               string_with_variable_2.size.times do |k|
                 if string_with_variable_2[k] == "%WORD%"
-                  answer2 = string_without_variable_2[k]
+                  answer << string_without_variable_2[k]
                   break
                 end
               end
@@ -81,7 +79,7 @@ class QuizController < ApplicationController
           break
         end
       end
-      answer = "#{answer1},#{answer2}"
+      answer = answer.join(",")
     end
     if answer
       uri_app = URI('http://pushkin.rubyroidlabs.com/quiz')
