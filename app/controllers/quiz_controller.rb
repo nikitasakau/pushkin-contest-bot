@@ -79,7 +79,7 @@ class QuizController < ApplicationController
           break
         end
       end
-      answer = "#{answer1},#{answer2}".downcase
+      answer = "#{answer1},#{answer2}"
     end
     if answer
       uri_app = URI('http://pushkin.rubyroidlabs.com/quiz')
