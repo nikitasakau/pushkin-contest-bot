@@ -42,85 +42,44 @@ class QuizController < ApplicationController
         end
       end
     when 3
-      #string = string.split('\n')
-      #devited_first = string[0].split('%WORD%')
-      #devited_second = string[1].split('%WORD%')
-      #answer1 = nil
-      #answer2 = nil
-      #info.size.times do |i|
-      #  devited_info = info[i][1].split("\n")
-      #  devited_info.size.times do |j|
-      #    if devited_info[j].include?(devited_first[0]) && devited_info[j].include?(devited_first[1])
-      #      if devited_info[j+1].include?(devited_second[0]) && devited_info[j+1].include?(devited_second[1])
-      #        string[0] = string[0]
-      #        string[1] = string[1]
-      #        string_with_variable_1 = string[0].split
-      #        string_with_variable_2 = string[1].split
-      #        string_without_variable_1 = devited_info[j].split
-      #        string_without_variable_2 = devited_info[j+1].split
-      #        string_with_variable_1.size.times do |k|
-      #          if string_with_variable_1[k] == "%WORD%"
-      #            answer1 = string_without_variable_1[k]
-      #            break
-      #          end
-      #        end
-      #        string_with_variable_2.size.times do |k|
-      #          if string_with_variable_2[k] == "%WORD%"
-      #            answer2 = string_without_variable_2[k]
-      #            break
-      #          end
-      #        end
-      #        answer = "#{answer1},#{answer2}"
-      #      end
-      #      break
-      #    end
-      #  end
-      #  if answer != nil
-      #    break
-      #  end
-      #end
-      tmp_inp_mas = string.split("\n")
-        tmp_tmp_inp = tmp_inp_mas[0].split(' ')
-        index_mas = []
-        tmp_inp_mas.map do |e|
-          tmp_str = e.split(' ')
-          tmp_str.size.times do |i|
-            if tmp_str[i].include?('WORD')
-              index_mas << i
-            end  
-          end
-        end
-        index_a = index_mas[0]
-        fl = 0
-        str.map do |e|
-          tmp_str = e[1].split("\n")
-          index_str = 0
-          tmp_str.map do |el|
-            tmp_tmp_str = el.split(' ')
-            if tmp_tmp_str.size != tmp_tmp_inp.size
-              next
-            end
-            fl = 1
-            tmp_tmp_str.size.times do |i|
-              if tmp_tmp_str[i] != tmp_tmp_inp[i] && !tmp_tmp_inp[i].include?('WORD')
-                fl = 0
-                break
+      string = string.split('\n')
+      devited_first = string[0].split('%WORD%')
+      devited_second = string[1].split('%WORD%')
+      answer1 = nil
+      answer2 = nil
+      info.size.times do |i|
+        devited_info = info[i][1].split("\n")
+        devited_info.size.times do |j|
+          if devited_info[j].include?(devited_first[0]) && devited_info[j].include?(devited_first[1])
+            if devited_info[j+1].include?(devited_second[0]) && devited_info[j+1].include?(devited_second[1])
+              string[0] = string[0]
+              string[1] = string[1]
+              string_with_variable_1 = string[0].split
+              string_with_variable_2 = string[1].split
+              string_without_variable_1 = devited_info[j].split
+              string_without_variable_2 = devited_info[j+1].split
+              string_with_variable_1.size.times do |k|
+                if string_with_variable_1[k] == "%WORD%"
+                  answer1 = string_without_variable_1[k]
+                  break
+                end
               end
-            end
-            if fl == 1
-              answer = []
-              (index_str..(index_str + level - 2)).each do |i|
-                answer << tmp_str[i].split(' ')[index_mas[i - index_str]]
+              string_with_variable_2.size.times do |k|
+                if string_with_variable_2[k] == "%WORD%"
+                  answer2 = string_without_variable_2[k]
+                  break
+                end
               end
-              answer = answer.join(",")
-              break
+              answer = "#{answer1},#{answer2}"
             end
-            index_str += 1
-          end
-          if fl == 1
             break
           end
         end
+        if answer != nil
+          break
+        end
+      end
+
     end
     if answer
       uri_app = URI('http://pushkin.rubyroidlabs.com/quiz')
