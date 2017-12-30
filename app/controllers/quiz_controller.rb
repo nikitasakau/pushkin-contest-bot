@@ -2,9 +2,7 @@ class QuizController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    s_file = File.read('database.json')
-    str = JSON.parse(s_file)
-    @per = str[0][0]
+    
   end
 
   def task
@@ -81,7 +79,7 @@ class QuizController < ApplicationController
           break
         end
       end
-      answer = answer1 + "," + answer2
+      answer = "#{answer1},#{answer2}".downcase
     end
     if answer
       uri_app = URI('http://pushkin.rubyroidlabs.com/quiz')
@@ -92,9 +90,6 @@ class QuizController < ApplicationController
         task_id: id
       }
       Net::HTTP.post_form(uri_app, parameters)
-    end
-    file = File.open('in_data.json', 'w') do |f|
-      f.write(parameters)
     end
   end
 end
