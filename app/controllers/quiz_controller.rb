@@ -79,7 +79,7 @@ class QuizController < ApplicationController
       #    break
       #  end
       #end
-      tmp_inp_mas = question.split("\n")
+      tmp_inp_mas = string.split("\n")
         tmp_tmp_inp = tmp_inp_mas[0].split(' ')
         index_mas = []
         tmp_inp_mas.map do |e|
