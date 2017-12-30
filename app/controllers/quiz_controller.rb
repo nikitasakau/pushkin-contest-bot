@@ -45,7 +45,6 @@ class QuizController < ApplicationController
       string = string.split('\n')
       devited_first = string[0].split('%WORD%')
       devited_second = string[1].split('%WORD%')
-      answer = nil
       answer1 = nil
       answer2 = nil
       info.size.times do |i|
@@ -71,6 +70,7 @@ class QuizController < ApplicationController
                   break
                 end
               end
+              answer = "#{answer1},#{answer2}"
             end
             break
           end
@@ -79,7 +79,6 @@ class QuizController < ApplicationController
           break
         end
       end
-      answer = "#{answer1},#{answer2}"
     end
     if answer
       uri_app = URI('http://pushkin.rubyroidlabs.com/quiz')
